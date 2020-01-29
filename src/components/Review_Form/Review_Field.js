@@ -33,11 +33,16 @@ class Review_Field extends Component {
         
     }
 
+    handleSubmit = e => {
+        e.preventDefault();
+        this.props.submit(this.state.input)
+    }
+
     render() {
         return (
             <div>
                 <h1>Restaurant List</h1>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <input type='text' className='form' placeholder='Write a review!' />
                     <button className='submit_review'>Submit</button>
                 </form>
