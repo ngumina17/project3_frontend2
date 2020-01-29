@@ -26,6 +26,10 @@ class Review_Field extends Component {
     }
 
     handlePut = (id, arrayIndex, currentArray) => {
+        axios.put('https://project3-restaurant-finder.herokuapp.com/restaurants')
+        .then (res => {
+            console.log('put')
+        }).then(() => this.getData())
         
     }
 
@@ -33,6 +37,10 @@ class Review_Field extends Component {
         return (
             <div>
                 <h1>Restaurant List</h1>
+                <form>
+                    <input type='text' className='form' placeholder='Write a review!' />
+                    <button className='submit_review'>Submit</button>
+                </form>
             </div>
         )
     }
